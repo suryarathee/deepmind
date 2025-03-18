@@ -14,7 +14,7 @@ def generate():
         types.Content(
             role="user",
             parts=[
-                types.Part.from_text(text="""INSERT_INPUT_HERE"""),
+                types.Part.from_text(text="""how can i video input in gemini api"""),
             ],
         ),
     ]
