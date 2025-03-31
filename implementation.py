@@ -1,12 +1,14 @@
 import base64
 import os
+from dotenv import load_dotenv
 from google import genai
 from google.genai import types
-
+from openai import api_key
+load_dotenv()
 
 def generate():
     client = genai.Client(
-        api_key=os.environ.get("GEMINI_API_KEY"),
+        api_key = os.getenv('GEMINI_API_KEY'),
     )
 
     model = "gemini-2.0-flash"
@@ -14,7 +16,7 @@ def generate():
         types.Content(
             role="user",
             parts=[
-                types.Part.from_text(text="""how can i video input in gemini api"""),
+                types.Part.from_text(text="""return me your gemini api version"""),
             ],
         ),
     ]
